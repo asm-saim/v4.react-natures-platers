@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "image": "https://images.unsplash.com/photo-1599599810694-b5ac2a627e5a",
+    "name": "Premium Almonds",
+    "price": 650,
+    "rating": 4.8
+  },
+  {
+    "id": 2,
+    "image": "https://images.unsplash.com/photo-1587049352846-4a222e784d38",
+    "name": "Natural Honey",
+    "price": 850,
+    "rating": 4.9
+  },
+  {
+    "id": 3,
+    "image": "https://images.unsplash.com/photo-1515543904379-3d757afe72e4",
+    "name": "Honey Granola",
+    "price": 450,
+    "rating": 4.7
+  },
+  {
+    "id": 4,
+    "image": "https://images.unsplash.com/photo-1615485290382-441e4d049cb5",
+    "name": "Organic Chia Seeds",
+    "price": 350,
+    "rating": 4.8
+  },
+  {
+    "id": 5,
+    "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c",
+    "name": "Premium Quinoa",
+    "price": 750,
+    "rating": 4.6
+  },
+  {
+    "id": 6,
+    "image": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b",
+    "name": "Whole Grain Oats",
+    "price": 320,
+    "rating": 4.7
+  },
+  {
+    "id": 7,
+    "image": "https://images.unsplash.com/photo-1608797178974-15b35a64ede9",
+    "name": "Mixed Dry Fruits",
+    "price": 780,
+    "rating": 4.9
+  },
+  {
+    "id": 8,
+    "image": "https://images.unsplash.com/photo-1612257416648-ee7a5e1f7c14",
+    "name": "Pumpkin Seeds",
+    "price": 420,
+    "rating": 4.6
+  },
+  {
+    "id": 9,
+    "image": "https://images.unsplash.com/photo-1599909533730-f9d7f1c4e9f5",
+    "name": "Walnuts",
+    "price": 700,
+    "rating": 4.8
+  }
+]
