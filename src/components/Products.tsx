@@ -1,6 +1,6 @@
 // import React, { use } from "react";
 
-import { use } from "react";
+import { use, useState } from "react";
 import { IProduct } from "../type/product";
 
 interface IProductsProps {
@@ -8,8 +8,17 @@ interface IProductsProps {
 }
 
 const Products = ({ userData }: IProductsProps) => {
+  //store and update carts:
+  const [cart, setCart] = useState<IProduct[]>([]);
+
+  const handleCart = (product: IProduct) => {
+    // console.log(product);
+    setCart([...cart, product]);
+  };
+  console.log(cart);
+
   const productsInfo = use(userData);
-  console.log(productsInfo);
+  // console.log(productsInfo);
   return (
     <div className="max-w-6xl mx-auto p-5">
       <h2 className="font-bold text-2xl text-gray-500">Our Products</h2>
@@ -28,7 +37,12 @@ const Products = ({ userData }: IProductsProps) => {
                 <h3 className="font-bold text-lg text-gray-500">{product.name}</h3>
                 <p className="text-gray-500">${product.price.toFixed(2)}</p>
                 <p className="text-gray-500">{product.rating}</p>
-                <button className="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 mt-2">Add to Cart</button>
+                <button
+                  onClick={() => handleCart(product)}
+                  className="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 mt-2"
+                >
+                  Add to Cart
+                </button>
               </div>
             ))}
           </div>
