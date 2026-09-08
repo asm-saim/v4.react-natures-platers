@@ -5,6 +5,7 @@ import Products from "./components/Products";
 import { Suspense, useState } from "react";
 import { IProduct } from "./type/product";
 import { ToastContainer } from "react-toastify";
+import Cart from "./components/Cart";
 
 // promise based data fetching
 const userData = async (): Promise<IProduct[]> => {
@@ -26,8 +27,9 @@ function App() {
 
   return (
     <>
-      <Nav></Nav>
+      <Nav cart={cart}></Nav>
       <Banner></Banner>
+      <Cart cart={cart}></Cart>
       <Services></Services>
       <Suspense fallback="Loading....">
         <Products handleCart={handleCart} userData={userDataPromise}></Products>
