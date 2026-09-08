@@ -2,23 +2,33 @@
 
 import { use, useState } from "react";
 import { IProduct } from "../type/product";
+import { Bounce, toast } from "react-toastify";
 
 interface IProductsProps {
   userData: Promise<IProduct[]>;
+  handleCart: (product: IProduct) => void;
 }
 
-const Products = ({ userData }: IProductsProps) => {
-  //store and update carts:
-  const [cart, setCart] = useState<IProduct[]>([]);
-
-  const handleCart = (product: IProduct) => {
+const Products = ({ userData, handleCart }: IProductsProps) => {
+  const handleValue = (product: IProduct) => {
     // console.log(product);
-    setCart([...cart, product]);
+    handleCart(product);
+    toast.success(`${product.name} added to cart!`, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
   };
-  console.log(cart);
-
+  // console.log(cart);
   const productsInfo = use(userData);
   // console.log(productsInfo);
+
   return (
     <div className="max-w-6xl mx-auto p-5">
       <h2 className="font-bold text-2xl text-gray-500">Our Products</h2>
@@ -38,7 +48,7 @@ const Products = ({ userData }: IProductsProps) => {
                 <p className="text-gray-500">${product.price.toFixed(2)}</p>
                 <p className="text-gray-500">{product.rating}</p>
                 <button
-                  onClick={() => handleCart(product)}
+                  onClick={() => handleValue(product)}
                   className="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-800 mt-2"
                 >
                   Add to Cart
